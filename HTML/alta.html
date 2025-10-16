@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Alta de Artículo</title>
+  <link rel="stylesheet" href="../CSS/alta.css">
+</head>
+<body>
+  <h2>Alta de Artículo</h2>
+  <form id="formArticulo">
+    <label for="clave">Clave:</label>
+    <input type="text" id="clave"  placeholder="Clave del Artículo" required>
+    <div class="error" id="errorClave"></div>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Nombre del Artículo", required>
+    <div class="error" id="errorNombre"></div>
+
+    <label for="nombre">Descripcion:</label>
+    <input type="text" id="Descripcion" placeholder="Descripcion del Articulo", required>
+    <div class="error" id="errorDes"></div>
+
+    <label for="precio">Precio (MX)$:</label>
+    <input type="number" id="precio" step="0.01" placeholder="Precio del Articulo" required>
+    <div class="error" id="errorPrecio"></div>
+
+    <label for="imagen">Imagen:</label>
+    <input type="url" id="imagen" placeholder="URL de la Imagen" required>
+    <div class="error" id="errorImagen"></div>
+
+    <button type="submit">Guardar Artículo</button>
+  </form>
+  <footer>
+   <script src="../JavaScript/altas.js"></script>
+   <p>Todos los derechos reservados a Estafador, Kenneth y Sebastian</p>
+  </footer>
+</body>
+</html>

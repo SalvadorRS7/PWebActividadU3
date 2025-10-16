@@ -1,0 +1,141 @@
+  body { font-family: Arial, sans-serif; margin: 20px; }
+    input, button { margin: 5px 0; padding: 8px; width: 100%; }
+    label { font-weight: bold; }
+    .error { color: red; font-size: 0.9em; }
+
+
+:root {
+  --color-primario: #007bff; 
+  --color-secundario: #28a745; 
+  --color-fondo: #f4f7f6; 
+  --color-tarjeta: #ffffff; 
+  --color-texto: #333333;
+  --color-borde: #ced4da;
+  --color-error: #dc3545;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+
+
+#formArticulo {
+  max-width: 500px; /* Ancho máximo para mantener la legibilidad */
+  margin: 0 auto;
+  background-color: var(--color-tarjeta);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--color-primario); /* Detalle de acento */
+}
+
+
+label {
+  display: block; /* Ocupa todo el ancho */
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ligero resplandor al enfocar */
+  outline: none;
+}
+
+/* Estilo para los mensajes de error */
+.error {
+  color: var(--color-error);
+  font-size: 0.8em;
+  height: 1.2em; /* Mantiene el espacio aunque esté vacío */
+  margin-bottom: 5px;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  background-color: var(--color-secundario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+}
+
+button[type="submit"]:active {
+  transform: scale(0.99); /* Efecto de "clic" */
+}
+
+
+/* Para pantallas más pequeñas (Móviles) */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  #formArticulo {
+    padding: 20px;
+    border-radius: 0; /* Opcional: hacer que la tarjeta ocupe todo el ancho en móvil */
+    box-shadow: none;
+    border-top: 0; /* Quitar el borde superior */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="url"],
+  button[type="submit"] {
+    padding: 10px; /* Reducir el padding para ahorrar espacio vertical */
+  }
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px 0;
+  font-size: 0.8em;
+  color: #6c757d;
+}

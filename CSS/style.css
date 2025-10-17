@@ -1,11 +1,11 @@
 .btn {
   display: inline-block; /* Crucial para aplicar padding, etc. */
   padding: 10px 20px;
-  background-color: #007bff;
+  font-family: 'roboto', sans-serif;
+  background: #007bff;
   color: white;
   text-decoration: none; /* Quita el subrayado típico del enlace */
-  border-radius: 5px;
-  border: none;
+  border-radius: 5px; 
   cursor: pointer;
   /* (Añadir un :hover para mejorar la experiencia) */
 }
@@ -16,12 +16,20 @@ body{
   padding: 0 1rem 3rem 1rem;
   background: linear-gradient(180deg,#f7f9fc,#e9f0fb);
   color: #222;
+  justify-content: center;
 }
-h1{
-  text-align: center;
+h1 {
   color: #073763;
-  margin-top: 1.5rem;
+  margin: 0 auto 0.5rem auto;
+  font-size: 2.5rem;
+  font-family: monospace;
+  width: 30ch; /* Ajusta según la longitud de tu texto */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(7,55,99,.75);
+  animation: typing 3s steps(30) forwards;
 }
+
 p{
   text-align: center;
   color: #555;
@@ -37,6 +45,23 @@ header{
   color: white;
   text-align: center;
 }
+.typing {
+  color: #073763;
+  margin: 0 auto 0.5rem auto;
+  font-size: 2.5rem;
+  font-family: 'Poppins',sans-serif;
+  width: 51ch;               
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(7,55,99,.75); 
+  box-sizing: content-box;   
+  animation:
+    typing 3s steps(30) forwards,  
+    blink-caret 0.75s step-end infinite; 
+  display: block;
+  text-align: center;
+}
+
 
 .services-container{
   display: grid;
@@ -95,8 +120,76 @@ header{
   padding: 0.25rem 0.4rem;
   border-radius: 4px;
 }
+.laser {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  cursor: pointer;
+  background: #ff8c00; /* naranja */
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease;
+}
+.laser::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: skewX(-20deg);
+  opacity: 0; 
+}
+.laser:hover::before {
+  animation: swipe 1.5s linear;
+  opacity: 1;
+}
 
 /* Pequeños ajustes responsivos */
 @media (max-width: 480px){
   .service-image{ height: 120px }
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 51ch }
+  }
+@keyframes swipe {
+ 0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+.laser:hover {
+  background: #ffa733;
+}
+@keyframes typing {
+  from { width: 0; }    /* empieza sin caracteres visibles */
+  to   { width: 51ch; } /* termina mostrando todo (coincide con la propiedad width) */
+}
+
+/* Parpadeo del "cursor" (borde derecho) */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+  100% { border-color: rgba(7,55,99,.75); }
+}
+
+/* ACCESIBILIDAD: respeta la preferencia del usuario por reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .typing {
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
 }

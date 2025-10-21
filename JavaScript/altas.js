@@ -87,7 +87,12 @@ document.addEventListener("DOMContentLoaded", () => { // Se añade el listener p
             }
         }
 
-        alert('Artículo guardado correctamente.');
+        Swal.fire({
+        icon: 'success',
+        title: 'Artículo guardado correctamente',
+        showConfirmButton: false,
+        timer: 1500
+        });
         form.reset();
     });
 }); // Cierre del addEventListener("DOMContentLoaded")

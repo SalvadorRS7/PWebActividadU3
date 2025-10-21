@@ -1,141 +1,124 @@
-  body { font-family: Arial, sans-serif; margin: 20px; }
-    input, button { margin: 5px 0; padding: 8px; width: 100%; }
-    label { font-weight: bold; }
-    .error { color: red; font-size: 0.9em; }
-
-
-:root {
-  --color-primario: #007bff; 
-  --color-secundario: #28a745; 
-  --color-fondo: #f4f7f6; 
-  --color-tarjeta: #ffffff; 
-  --color-texto: #333333;
-  --color-borde: #ced4da;
-  --color-error: #dc3545;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ===== Fuentes y body ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffe0b2); /* fondo moderno degradado */
+  color: #1a1a1a;
   line-height: 1.6;
+  margin: 0;
   padding: 20px;
 }
 
+/* ===== Encabezado ===== */
 h2 {
   text-align: center;
-  color: var(--color-primario);
-  margin-bottom: 30px;
-  font-size: 2em;
+  font-size: 2.5rem;
+  color: #00796b;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-
-
+/* ===== Formulario ===== */
 #formArticulo {
-  max-width: 500px; /* Ancho máximo para mantener la legibilidad */
+  max-width: 500px;
   margin: 0 auto;
-  background-color: var(--color-tarjeta);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-top: 5px solid var(--color-primario); /* Detalle de acento */
+  background: #ffffffcc; /* fondo semi-transparente moderno */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
-
 
 label {
-  display: block; /* Ocupa todo el ancho */
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 0.95em;
+  font-weight: 500;
+  color: #00796b;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1rem;
 }
 
 input[type="text"],
 input[type="number"],
 input[type="url"] {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--color-borde);
-  border-radius: 8px;
-  font-size: 1em;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 input:focus {
-  border-color: var(--color-primario);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ligero resplandor al enfocar */
   outline: none;
+  border-color: #ff7043;
+  box-shadow: 0 0 8px rgba(255,112,67,0.3);
 }
 
-/* Estilo para los mensajes de error */
+/* ===== Mensajes de error ===== */
 .error {
-  color: var(--color-error);
-  font-size: 0.8em;
-  height: 1.2em; /* Mantiene el espacio aunque esté vacío */
-  margin-bottom: 5px;
+  color: #d32f2f;
+  font-size: 0.85rem;
+  height: 1.2em; /* mantiene espacio aunque esté vacío */
 }
 
-
+/* ===== Botón de envío ===== */
 button[type="submit"] {
   width: 100%;
-  padding: 15px;
-  margin-top: 25px;
-  background-color: var(--color-secundario);
-  color: white;
+  padding: 14px 0;
+  background: #ff7043;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 button[type="submit"]:hover {
-  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+  background: #ff5722;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 button[type="submit"]:active {
-  transform: scale(0.99); /* Efecto de "clic" */
+  transform: scale(0.98);
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
 
-/* Para pantallas más pequeñas (Móviles) */
+/* ===== Responsivo ===== */
 @media (max-width: 600px) {
   body {
     padding: 10px;
   }
 
   h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
 
   #formArticulo {
-    padding: 20px;
-    border-radius: 0; /* Opcional: hacer que la tarjeta ocupe todo el ancho en móvil */
-    box-shadow: none;
-    border-top: 0; /* Quitar el borde superior */
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
   }
 
   input[type="text"],
   input[type="number"],
   input[type="url"],
   button[type="submit"] {
-    padding: 10px; /* Reducir el padding para ahorrar espacio vertical */
+    padding: 10px;
+    font-size: 1rem;
   }
-}
-
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 10px 0;
-  font-size: 0.8em;
-  color: #6c757d;
 }

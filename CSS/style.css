@@ -1,191 +1,201 @@
-.btn {
-  display: inline-block; /* Crucial para aplicar padding, etc. */
-  padding: 10px 20px;
-  font-family: 'roboto', sans-serif;
-  background: #007bff;
-  color: white;
-  text-decoration: none; /* Quita el subrayado típico del enlace */
-  border-radius: 5px; 
-  cursor: pointer;
-  /* (Añadir un :hover para mejorar la experiencia) */
-}
-/* Estilos para el contenedor de servicios y tarjetas */
-body{
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Fuentes y body ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0 1rem 3rem 1rem;
-  background: linear-gradient(180deg,#f7f9fc,#e9f0fb);
-  color: #222;
-  justify-content: center;
-}
-h1 {
-  color: #073763;
-  margin: 0 auto 0.5rem auto;
-  font-size: 2.5rem;
-  font-family: monospace;
-  width: 30ch; /* Ajusta según la longitud de tu texto */
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid rgba(7,55,99,.75);
-  animation: typing 3s steps(30) forwards;
+  padding: 0;
+  background: linear-gradient(135deg, #e0f7fa, #ffe0b2);
+  color: #1a1a1a;
 }
 
-p{
+/* ===== Encabezados ===== */
+h1, .typing {
+  font-size: 3rem;
+  font-weight: 600;
   text-align: center;
-  color: #555;
-  max-width: 600px;
-  margin: 0.5rem auto 1.5rem auto;
+  color: #ffffff;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 1px;
 }
-header{
-  margin-bottom: 1rem;
-  background-color: rgb(122, 151, 203);
-  padding: 1rem;
-  border-radius: 0px;
-  box-shadow: 0 6px 18px rgba(20,30,50,0.08);
-  color: white;
+
+/* ===== Párrafos ===== */
+p {
   text-align: center;
-}
-.typing {
-  color: #073763;
-  margin: 0 auto 0.5rem auto;
-  font-size: 2.5rem;
-  font-family: 'Poppins',sans-serif;
-  width: 51ch;               
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid rgba(7,55,99,.75); 
-  box-sizing: content-box;   
-  animation:
-    typing 3s steps(30) forwards,  
-    blink-caret 0.75s step-end infinite; 
-  display: block;
-  text-align: center;
-}
-
-
-.services-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 1rem;
-  max-width: 1100px;
-  margin: 1.5rem auto;
-  align-items: start;
-}
-
-.service-card{
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(20,30,50,0.08);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.service-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(20,30,50,0.12);
-}
-
-.service-image{
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
-  background: #eef6ff;
-}
-
-.service-title{
-  margin: 0;
-  font-size: 1.1rem;
-  color: #073763;
-}
-
-.service-desc{
-  margin: 0;
-  color: #333;
-  flex: 1 1 auto;
-}
-
-.service-price{
-  font-weight: 700;
   font-size: 1rem;
-  margin-top: 0.25rem;
+  color: #4a4a4a;
+  max-width: 600px;
+  margin: 0.5rem auto 2rem auto;
 }
 
-/* Destacar cuando el precio sea mayor a $1000 */
-.expensive{
-  color: #b31217; /* rojo tenue */
-  background: linear-gradient(90deg, rgba(179,18,23,0.06), transparent);
-  padding: 0.25rem 0.4rem;
-  border-radius: 4px;
+/* ===== Header ===== */
+header {
+  background: #00796b;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+/* ===== Botones modernos ===== */
+.btn, .laser {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  background: #ff7043;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover, .laser:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Botón “laser” efecto swipe */
 .laser {
   position: relative;
   overflow: hidden;
-  border: none;
-  outline: none;
-  border-radius: 7px;
-  padding: 12px 20px;
-  cursor: pointer;
-  background: #ff8c00; /* naranja */
-  color: white;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  transition: background 0.3s ease;
+  letter-spacing: 1px;
 }
+
 .laser::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -75%;
-  width: 50%;
+  left: -80%;
+  width: 60%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.7),
-    transparent
-  );
-  transform: skewX(-20deg);
-  opacity: 0; 
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: skewX(-25deg);
+  opacity: 0;
 }
+
 .laser:hover::before {
-  animation: swipe 1.5s linear;
+  animation: swipe 1.2s linear;
   opacity: 1;
 }
 
-/* Pequeños ajustes responsivos */
-@media (max-width: 480px){
-  .service-image{ height: 120px }
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 51ch }
-  }
-@keyframes swipe {
- 0% {
-    left: -75%;
-  }
-  100% {
-    left: 125%;
-  }
-}
-.laser:hover {
-  background: #ffa733;
-}
-@keyframes typing {
-  from { width: 0; }    /* empieza sin caracteres visibles */
-  to   { width: 51ch; } /* termina mostrando todo (coincide con la propiedad width) */
+/* ===== Contenedor de servicios ===== */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-/* Parpadeo del "cursor" (borde derecho) */
-@keyframes blink-caret {
-  50% { border-color: transparent; }
-  100% { border-color: rgba(7,55,99,.75); }
+/* ===== Tarjetas de servicios ===== */
+.service-card {
+  background: #ffffffcc; /* semi-transparente */
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ACCESIBILIDAD: respeta la preferencia del usuario por reducir movimiento */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #b2dfdb;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00796b;
+  margin: 0;
+}
+
+.service-desc {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin: 0;
+  flex: 1;
+}
+
+.service-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff7043;
+}
+
+.expensive {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 0.3rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* ===== Formularios modernos ===== */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #ffffffcc;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form label {
+  font-weight: 500;
+  color: #00796b;
+}
+
+form input, form button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #ff7043;
+  box-shadow: 0 0 8px rgba(255,112,67,0.3);
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+}
+
+/* ===== Animaciones ===== */
+@keyframes typing { from { width: 0; } to { width: 50ch; } }
+@keyframes blink-caret { 50% { border-color: transparent; } 100% { border-color: rgba(7,55,99,0.75); } }
+@keyframes swipe { 0% { left: -80%; } 100% { left: 125%; } }
+
+/* ===== Responsivo ===== */
+@media (max-width: 480px) {
+  .service-image { height: 150px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .typing {
     animation: none;
